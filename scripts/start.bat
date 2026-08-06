@@ -1,6 +1,13 @@
 @echo off
 REM Detection System Startup Script - Windows
-REM This script starts the entire Detection System (Backend + Frontend)
+REM Starts the full stack (Backend + Frontend).
+REM Location-independent: resolves the repository root from this script's own path,
+REM so it can be run or double-clicked from anywhere (including inside scripts/).
+
+setlocal
+
+REM Resolve repository root (parent of the scripts/ directory)
+cd /d "%~dp0.."
 
 echo.
 echo ========================================

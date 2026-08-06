@@ -4,13 +4,13 @@
 
 **Windows (easiest)**
 ```bash
-start.bat
+scripts\start.bat
 ```
 
 **Any OS**
 ```bash
-./start.ps1  # PowerShell
-./start.sh   # macOS/Linux
+./scripts/start.ps1  # PowerShell
+./scripts/start.sh   # macOS/Linux
 ```
 
 **Manual**
@@ -82,7 +82,7 @@ backend/routes/api.js      ← API endpoints
 frontend/lib/api.ts        ← API client
 frontend/app/page.tsx      ← Dashboard
 .env                       ← Environment config
-start.bat/ps1/sh          ← Startup scripts
+scripts/start.*           ← Startup scripts
 ```
 
 ---
@@ -99,7 +99,7 @@ start.bat/ps1/sh          ← Startup scripts
 
 | Problem | Solution |
 |---------|----------|
-| Port in use | `start.bat` auto-cleans ports |
+| Port in use | `scripts/start.bat` auto-cleans ports |
 | npm not found | Install Node.js v14+ |
 | Module error | `npm install` in backend/frontend |
 | API 404 | Restart backend server |

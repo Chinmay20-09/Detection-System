@@ -2,9 +2,10 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, classification_report
 from xgboost import XGBClassifier
-<<<<<<< HEAD
 import sys
 import os
+import shap
+import pickle
 
 # Add data-generator to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'data-generator'))
@@ -13,16 +14,10 @@ from generator import get_data_from_generator
 # Configuration: Set to 'generator' to use synthetic data or 'csv' to use static data
 DATA_SOURCE = 'generator'  # Change to 'csv' to use creditcard.csv instead
 CSV_PATH = 'creditcard.csv'  # Path to CSV if using static data
-=======
-import shap
-import pickle
-import os
->>>>>>> 0de5922fa2426bb0b326ce76787e353998707eed
 
 # -----------------------------
 # 1. Load Dataset (FIXED)
 # -----------------------------
-<<<<<<< HEAD
 if DATA_SOURCE == 'generator':
     print("Loading data from generator...")
     df = get_data_from_generator(
@@ -35,14 +30,6 @@ if DATA_SOURCE == 'generator':
 else:
     print(f"Loading data from CSV: {CSV_PATH}")
     df = pd.read_csv(CSV_PATH)
-=======
-DATA_PATH = "creditcard.csv"  # keep file in same folder
-
-if not os.path.exists(DATA_PATH):
-    raise FileNotFoundError("Dataset not found. Place creditcard.csv in project folder.")
-
-df = pd.read_csv("creditcard.csv")
->>>>>>> 0de5922fa2426bb0b326ce76787e353998707eed
 
 # -----------------------------
 # 2. Features and Labels

@@ -20,7 +20,7 @@
 - [x] `README.md` with project overview
 - [x] `DEPENDENCIES.md` with all packages listed
 - [x] `SETUP_GUIDE.md` with setup instructions
-- [x] `start.bat`, `start.ps1`, `start.sh` launcher scripts
+- [x] `scripts/start.bat`, `scripts/start.ps1`, `scripts/start.sh` launcher scripts
 
 ### Configuration Files
 - [x] `backend/.env` configured
@@ -115,18 +115,18 @@ Users can start the system in 3 ways:
 ### Method 1: Automated Scripts
 **Windows**:
 ```bash
-start.bat
+scripts\start.bat
 ```
 
 **Any OS with PowerShell**:
 ```powershell
-.\start.ps1
+.\scripts\start.ps1
 ```
 
 **macOS/Linux**:
 ```bash
-chmod +x start.sh
-./start.sh
+chmod +x scripts/start.sh
+./scripts/start.sh
 ```
 
 ### Method 2: Manual Terminal Commands
@@ -150,7 +150,7 @@ npm run dev -- -p 3001
 cd backend && npm install && cd ../frontend && npm install && cd ..
 
 # Then use a startup script
-start.bat  # or start.ps1 or ./start.sh
+scripts/start.bat  # or scripts/start.ps1 or ./scripts/start.sh
 ```
 
 ---
@@ -252,7 +252,7 @@ This system is ready for:
 ## 📞 Support & Maintenance
 
 ### Common Issues
-1. **Port conflict**: Use `start.bat` to auto-cleanup
+1. **Port conflict**: Use `scripts/start.bat` to auto-cleanup
 2. **Module not found**: Run `npm install` in backend/frontend
 3. **API errors**: Check backend server logs
 4. **Frontend won't load**: Clear .next folder

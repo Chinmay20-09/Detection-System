@@ -377,7 +377,7 @@ A: Yes! The ML model expects 30 features. Add what you want, unknown fields are 
 A: Yes! Run `python anomaly-detection/train.py` with your data, copy `model.pkl` to `ml-service/`
 
 **Q: How do I deploy this to production?**
-A: See `DEPLOYMENT_CHECKLIST.md` and `SYSTEM_READY.md`
+A: See `DEPLOYMENT_CHECKLIST.md`
 
 **Q: Can I use this with my database?**
 A: Yes! Modify the backend routes in `backend/routes/api.js` to fetch/store data
@@ -388,14 +388,14 @@ Your fraud detection system is running. Next steps:
 
 1. Experiment with different transaction amounts
 2. Load test with 100+ transactions
-3. Read `SYSTEM_READY.md` for deployment options
+3. Read `DEPLOYMENT_CHECKLIST.md` for deployment options
 4. Configure thresholds for your use case
 5. Connect to your real data source
 
 **Questions?** Check:
-- `SYSTEM_READY.md` - Complete system overview
-- `ml-service/README.md` - ML Service documentation
-- `REALTIME_SETUP_COMPLETE.md` - Detailed setup guide
+- `SETUP_GUIDE.md` - Setup & running guide
+- `../ml-service/README.md` - ML Service documentation
+- `../backend/realtime/README.md` - Real-time ingestion docs
 - Source code comments for implementation details
 
 ---

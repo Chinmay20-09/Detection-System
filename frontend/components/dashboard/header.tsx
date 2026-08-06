@@ -26,7 +26,6 @@ const tabTitles: Record<TabType, string> = {
   overview: "Overview",
   transactions: "Transaction Monitoring",
   profiles: "User Behavioral Profiles",
-  risk: "Dynamic Risk Scoring",
   alerts: "Alert Management",
   chains: "Fraud Chain Detection",
   settings: "System Settings",

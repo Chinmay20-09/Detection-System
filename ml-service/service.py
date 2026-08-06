@@ -330,6 +330,19 @@ def create_ml_service(model_path: str = "model.pkl", host: str = "localhost", po
     return MLServiceServer(model_path, host, port)
 
 
+# ------------------------------------------------------------------
+# Module-level WSGI application for gunicorn / WSGI deployments.
+# Referenced as `service:app` by the ml-service Dockerfile and start.sh.
+# ------------------------------------------------------------------
+_service = create_ml_service(model_path=os.getenv("MODEL_PATH", "model.pkl"))
+app = _service.app
+
+# Preload the model so WSGI workers can serve predictions immediately.
+# If loading fails (e.g. model not found), /health reports 'unhealthy'.
+if not _service.model_manager.load_model():
+    logger.warning("⚠️  Model could not be preloaded at import time. /health will report 'unhealthy'.")
+
+
 if __name__ == "__main__":
     import argparse
     

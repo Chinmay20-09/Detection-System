@@ -6,13 +6,13 @@
 
 #### Method 1: Batch Script (Easiest)
 ```bash
-start.bat
+scripts\start.bat
 ```
 
 #### Method 2: PowerShell Script
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-.\start.ps1
+.\scripts\start.ps1
 ```
 
 #### Method 3: Manual (Terminal 1 - Backend)
@@ -33,8 +33,8 @@ npm run dev -- -p 3001
 
 #### Method 1: Shell Script
 ```bash
-chmod +x start.sh
-./start.sh
+chmod +x scripts/start.sh
+./scripts/start.sh
 ```
 
 #### Method 2: Manual (Terminal 1 - Backend)
@@ -234,9 +234,7 @@ Detection-System/
 ├── anomaly-detection/         # Python ML (optional)
 │   └── train.py               # ML training script
 ├── .env                       # Root environment
-├── start.bat                  # Windows batch launcher
-├── start.ps1                  # PowerShell launcher
-├── start.sh                   # Unix shell launcher
+├── scripts/                   # start.bat / start.ps1 / start.sh launchers
 ├── DEPENDENCIES.md            # All dependencies list
 ├── SETUP_GUIDE.md            # This file
 └── README.md                 # Project overview
@@ -370,9 +368,9 @@ If you encounter issues:
 
 ## ✅ Final Checklist Before Push
 
-- [ ] `start.bat` works on Windows
-- [ ] `start.ps1` works on Windows
-- [ ] `start.sh` works on macOS/Linux
+- [ ] `scripts/start.bat` works on Windows
+- [ ] `scripts/start.ps1` works on Windows
+- [ ] `scripts/start.sh` works on macOS/Linux
 - [ ] Backend starts without errors
 - [ ] Frontend starts without errors  
 - [ ] All API endpoints respond

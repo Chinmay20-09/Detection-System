@@ -5,7 +5,7 @@ Real-Time Model Inference Examples
 import requests
 import json
 import time
-from ml_service.client import MLServiceClient, PredictionResult
+from client import MLServiceClient, PredictionResult
 
 
 def example_1_single_prediction():

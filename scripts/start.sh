@@ -1,6 +1,12 @@
 #!/bin/bash
 # Detection System Startup Script - macOS/Linux
-# This script starts the entire Detection System (Backend + Frontend)
+# Starts the full stack (Backend + Frontend).
+# Location-independent: resolves the repository root from this script's own path,
+# so it can be invoked from anywhere (e.g. ./scripts/start.sh).
+
+# Resolve repository root (parent of the scripts/ directory)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/.."
 
 echo ""
 echo "========================================"

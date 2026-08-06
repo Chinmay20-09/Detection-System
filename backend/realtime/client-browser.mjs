@@ -3,7 +3,7 @@
  * Browser-compatible version of the ingestion client
  */
 
-export class RealtimeIng​estionClient {
+export class RealtimeIngestionClient {
   constructor(wsUrl = "ws://localhost:3000") {
     this.wsUrl = wsUrl;
     this.ws = null;

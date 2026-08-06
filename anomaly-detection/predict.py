@@ -21,7 +21,6 @@ with open("model.pkl", "rb") as f:
 # -------------------------------
 # 2. Load dataset
 # -------------------------------
-<<<<<<< HEAD
 if DATA_SOURCE == 'generator':
     print("Loading data from generator...")
     df = get_data_from_generator(
@@ -44,9 +43,6 @@ if 'user_id' not in df.columns:
 
 # Store original data before modifications
 original_df = df.copy()
-=======
-df = pd.read_csv("creditcard.csv")
->>>>>>> 0de5922fa2426bb0b326ce76787e353998707eed
 
 # -------------------------------
 # 3. Select a user
@@ -62,7 +58,7 @@ print(f"Total Transactions for User: {len(user_df)}")
 # 5. Prepare features
 # -------------------------------
 # Remove non-feature columns
-feature_cols = [col for col in X.columns if col not in ['Class', 'user_id']]
+feature_cols = [col for col in df.columns if col not in ['Class', 'user_id']]
 X = user_df[feature_cols]
 
 # -------------------------------

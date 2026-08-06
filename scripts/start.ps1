@@ -1,6 +1,11 @@
 #!/usr/bin/env pwsh
 # Detection System Startup Script - PowerShell (Windows/Mac/Linux)
-# This script starts the entire Detection System (Backend + Frontend)
+# Starts the full stack (Backend + Frontend).
+# Location-independent: resolves the repository root from this script's own path,
+# so it can be invoked from anywhere (e.g. ./scripts/start.ps1).
+
+# Resolve repository root (parent of the scripts/ directory)
+$RepoRoot = Split-Path -Parent $PSScriptRoot
 
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Cyan
@@ -21,24 +26,24 @@ Write-Host ""
 
 # Kill any existing processes on ports 3000 and 3001
 Write-Host "Cleaning up old processes..." -ForegroundColor Yellow
-Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue | 
-    Where-Object {$_.State -eq 'Listen'} | 
+Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue |
+    Where-Object {$_.State -eq 'Listen'} |
     Stop-Process -Force -ErrorAction SilentlyContinue 2>$null
 
-Get-NetTCPConnection -LocalPort 3001 -ErrorAction SilentlyContinue | 
-    Where-Object {$_.State -eq 'Listen'} | 
+Get-NetTCPConnection -LocalPort 3001 -ErrorAction SilentlyContinue |
+    Where-Object {$_.State -eq 'Listen'} |
     Stop-Process -Force -ErrorAction SilentlyContinue 2>$null
 
 Start-Sleep -Seconds 1
 
 Write-Host ""
 Write-Host "Starting Backend Server (Port 3000)..." -ForegroundColor Green
-Start-Process powershell -ArgumentList "-NoExit -Command cd '$PWD/backend' ; npm start" -WindowStyle Normal
+Start-Process powershell -ArgumentList "-NoExit -Command cd '$RepoRoot/backend' ; npm start" -WindowStyle Normal
 
 Start-Sleep -Seconds 3
 
 Write-Host "Starting Frontend Server (Port 3001)..." -ForegroundColor Green
-Start-Process powershell -ArgumentList "-NoExit -Command cd '$PWD/frontend' ; npm run dev -- -p 3001" -WindowStyle Normal
+Start-Process powershell -ArgumentList "-NoExit -Command cd '$RepoRoot/frontend' ; npm run dev -- -p 3001" -WindowStyle Normal
 
 Start-Sleep -Seconds 3
 

@@ -270,7 +270,7 @@ Detection-System/
 │
 ├── .env                   # Environment configuration
 ├── .env.example           # Example env file
-├── DEPENDENCIES.md        # Full dependency documentation
+├── docs/                  # Documentation (setup guide, dependencies, checklists)
 └── README.md             # This file
 ```
 
@@ -333,7 +333,7 @@ NEXT_PUBLIC_APP_VERSION=1.0.0
 - **HTTP Client**: Axios 1.14.0
 - **CORS**: cors 2.8.5
 
-See [DEPENDENCIES.md](DEPENDENCIES.md) for complete list.
+See [docs/DEPENDENCIES.md](docs/DEPENDENCIES.md) for complete list.
 
 ## 🔐 Security Features
 
@@ -447,7 +447,7 @@ MIT License - feel free to use for personal or commercial projects.
 
 For issues or questions:
 - Open an issue on GitHub
-- Check [DEPENDENCIES.md](DEPENDENCIES.md) for detailed setup guide
+- Check [docs/DEPENDENCIES.md](docs/DEPENDENCIES.md) for detailed setup guide
 
 ## 👨‍💻 Author
 
@@ -552,7 +552,7 @@ python train.py
 1. **Start the backend**: `cd backend && npm start`
 2. **Start the frontend**: `cd frontend && npm run dev`
 3. **Visit dashboard**: http://localhost:3000
-4. **View documentation**: See [DEPENDENCIES.md](DEPENDENCIES.md)
+4. **View documentation**: See [docs/DEPENDENCIES.md](docs/DEPENDENCIES.md)
 
 ### 🎯 Features Ready to Use
 
